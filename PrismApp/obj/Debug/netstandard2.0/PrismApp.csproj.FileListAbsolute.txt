@@ -1,0 +1,13 @@
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\bin\Debug\netstandard2.0\PrismApp.deps.json
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\bin\Debug\netstandard2.0\PrismApp.dll
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\bin\Debug\netstandard2.0\PrismApp.pdb
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\Views\SignUpPage.xaml.g.cs
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.AssemblyInfoInputs.cache
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.AssemblyInfo.cs
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.dll
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.pdb
+C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.csprojAssemblyReference.cache

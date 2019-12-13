@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             NavigationPage.HasNavigationBar="False"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismApp.Views.SignUpPage">
+            
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,0,0" AbsoluteLayout.LayoutFlags="All">
+                    <FlexLayout JustifyContent="SpaceBetween">
+                        <StackLayout Padding="15">
+                        <ImageButton Source="Backbtn.png" BackgroundColor="Transparent" WidthRequest="65" Command="{Binding Back_btn2}"/>
+                        </StackLayout>
+                        <StackLayout TranslationX="10">
+                            <Image Source="rightShape.png"/>
+                        </StackLayout>
+                    </FlexLayout>
+                </AbsoluteLayout>
+            </Grid>
+            <StackLayout Grid.Row="1">
+                <Image Source="logo.png"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0">
+                <Label Text="Create Account" FontAttributes="Bold" FontSize="Large" TextColor="#333" HorizontalOptions="Center"/>
+            </StackLayout>
+            <ScrollView  Grid.Row="3">
+                <StackLayout Margin="10" Padding="20">
+                    <StackLayout Spacing="20">
+                        <StackLayout >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry Placeholder="User Name*" PlaceholderColor="LightGray" FontSize="Medium"/>
+                            <Image Grid.Column="1" TranslationY="-5" Source="manUser.png"/>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry Placeholder="Email ID*" PlaceholderColor="LightGray" FontSize="Medium"/>
+                                <Image Grid.Column="1" TranslationY="-5" Source="envelope.png"/>
+                            </Grid>
+                        </StackLayout>
+                    <StackLayout >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry IsPassword="True" Placeholder="Password*" PlaceholderColor="LightGray" FontSize="Medium"/>
+                                <Image Grid.Column="1" TranslationY="-5" Source="invisible.png"/>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                <CheckBox IsChecked="True" Color="LightGray"/>
+                                <Label Text="I Read And agree to" TextColor="LightGray" FontSize="Medium" FontFamily="Roboto"/>
+                                <Label Text="Trums and Conditions" TextDecorations="Underline" TextColor="#ff7c17" FontSize="Medium" FontFamily="Roboto"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" Margin="20" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Button Text="Register Now" FontSize="Medium" TextColor="White" FontAttributes="Bold" BackgroundColor="#ff7c17" Padding="10,20,10,20" CornerRadius="30"/>
+                        <Label Text="Or Login using social Media" FontAttributes="Bold" FontSize="Large" TextColor="#666666" FontFamily="Roboto"/>
+                    </StackLayout>
+                    <FlexLayout JustifyContent="SpaceEvenly" AlignContent="Center">
+                        <Image Source="facebook.png"/>
+                        <Image Source="twitter.png"/>
+                    </FlexLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Already have an account?" VerticalOptions="Center"  TextColor="#666666" FontSize="Medium" FontFamily="Roboto" FontAttributes="Bold"/>
+                        <Button VerticalOptions="Center" Text="Login" BackgroundColor="Transparent" TextColor="#ff7c17"  FontSize="Medium" FontFamily="Roboto" FontAttributes="Bold" Command="{Binding backToLogin}"/>
+                </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+</ContentPage>
