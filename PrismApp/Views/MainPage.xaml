@@ -8,42 +8,42 @@
 
 
     <yummy:PancakeView BackgroundGradientStartColor="#FFB435" BackgroundGradientEndColor="#FF7701">
-        <ScrollView>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                    <StackLayout  Padding="30" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0">
-                        <yummy:PancakeView>
-                            <Image Source="background.png"/>
-                        </yummy:PancakeView>
-                    </StackLayout>
-                    <StackLayout Spacing="100" Margin="0,30,0,0" Grid.Row="1">
-                        <FlexLayout Direction="Row" JustifyContent="SpaceEvenly" AlignItems="Center">                        
-                            <yummy:PancakeView BackgroundColor="White" WidthRequest="200" CornerRadius="40" HeightRequest="65">
-                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                    <Button Text="Login" Command="{Binding NavigationCommand_login}" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="Small" />
-                                </StackLayout>
-                            </yummy:PancakeView>
-                            <yummy:PancakeView BackgroundColor="White" WidthRequest="200" CornerRadius="40" HeightRequest="65">
-                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                    <Button Text="Register Now" Command="{Binding NavigationCommand_register}" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="Small" />
-                                </StackLayout>
-                            </yummy:PancakeView>
-                        </FlexLayout>
-                        <StackLayout HorizontalOptions="Center" Grid.Row="1">
-                            <Label Text="Now! Quick Login Use Touch ID" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
-                            <StackLayout Margin="0,20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image Source="fingerprint.png" HeightRequest="75"/>
-                                <StackLayout HorizontalOptions="Center">
-                                    <Label Margin="0,20,0,0" Text="Use Touch ID" TextDecorations="Underline" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
-                                </StackLayout>
+                <StackLayout Grid.Row="0">
+                        <Image Source="background.png"/>
+                </StackLayout>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <FlexLayout Grid.Row="0" Direction="Row" JustifyContent="SpaceEvenly" AlignItems="Center">
+                        <yummy:PancakeView BackgroundColor="White" Padding="30,0" CornerRadius="40" HeightRequest="50">
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Button Text="Login" Command="{Binding NavigationCommand_login}" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="Small" />
                             </StackLayout>
+                        </yummy:PancakeView>
+                        <yummy:PancakeView BackgroundColor="White" Padding="30,0" CornerRadius="40" HeightRequest="50">
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Button Text="Register Now" Command="{Binding NavigationCommand_register}" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="Small" />
+                            </StackLayout>
+                        </yummy:PancakeView>
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="Center" Grid.Row="1">
+                        <Label Text="Now! Quick Login Use Touch ID" TextColor="White"  FontSize="Subtitle" FontAttributes="Bold"/>
+                        <StackLayout Margin="0,20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Image Source="fingerprint.png" HeightRequest="75"/>
+                            <StackLayout HorizontalOptions="Center">
+                            <Label Margin="0,20,0,0" Text="Use Touch ID" TextDecorations="Underline" TextColor="White" FontSize="Subtitle" FontAttributes="Bold"/>
+                        </StackLayout>
                         </StackLayout>
                     </StackLayout>
-            </Grid>
-        </ScrollView>
+                </Grid>
+        </Grid>
     </yummy:PancakeView>
     <!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />

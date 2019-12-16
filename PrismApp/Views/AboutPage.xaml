@@ -5,6 +5,7 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="{Binding Title}"
+             xmlns:Converters="clr-namespace:PrismApp.Converters"
              NavigationPage.HasNavigationBar="False"
              x:Class="PrismApp.Views.AboutPage">
     <ContentPage.Resources>
@@ -28,12 +29,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,0,0" AbsoluteLayout.LayoutFlags="All">
+            <AbsoluteLayout >
                 <FlexLayout JustifyContent="SpaceBetween">
                     <StackLayout Padding="15">
                         <ImageButton Source="Backbtn.png" BackgroundColor="Transparent" WidthRequest="65" Command="{Binding Back_btn}"/>
@@ -43,55 +43,66 @@
                     </StackLayout>
                 </FlexLayout>
             </AbsoluteLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="End">
+                <Image Source="logo.png"/>
+            </StackLayout>
         </Grid>
         <StackLayout Grid.Row="1">
-            <Image Source="logo.png"/>
-        </StackLayout>
-        <StackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0">
             <Label Text="Hello" FontAttributes="Bold" FontSize="50" TextColor="#333" HorizontalOptions="Center"/>
-            <Label Text="Sign into your account" FontSize="Title" TextColor="#606060"/>
-        </StackLayout>
-        <ScrollView  Grid.Row="3">
-            <StackLayout Margin="10" Padding="20">
-                <StackLayout Spacing="20">
-                    <StackLayout >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Entry Placeholder="Email ID*" PlaceholderColor="LightGray" FontSize="Medium"/>
-                            <Image Grid.Column="1" TranslationY="-5" Source="envelope.png"/>
-                        </Grid>
-                    </StackLayout>
-                    <StackLayout >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Entry IsPassword="True" Placeholder="Password*" PlaceholderColor="LightGray" FontSize="Medium"/>
-                            <Image Grid.Column="1" TranslationY="-5" Source="invisible.png"/>
-                        </Grid>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="End">
-                        <Label Text="Forgot your Password?" TextColor="LightGray" FontSize="Medium" FontFamily="Roboto"/>
-                    </StackLayout>
-                </StackLayout>            
-                <StackLayout Grid.Row="3" Margin="20" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Button Text="Login" FontSize="Medium" TextColor="White" FontAttributes="Bold" BackgroundColor="#ff7c17" Padding="10,20,10,20" CornerRadius="30"/>
-                    <Label Text="Or Login using social Media" FontAttributes="Bold" FontSize="Large" TextColor="#666666" FontFamily="Roboto"/>
+            <Label Text="Sign into your account" FontSize="Title" TextColor="#606060" HorizontalOptions="Center"/>
+            <StackLayout>
+                <StackLayout Margin="20,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="EmailField" Text="" Placeholder="Email ID*" PlaceholderColor="LightGray" FontSize="Medium"/>
+                        <Image Grid.Column="1" TranslationY="-5" Source="envelope.png"/>
+                    </Grid>
                 </StackLayout>
-                <FlexLayout JustifyContent="SpaceEvenly" AlignContent="Center">
-                    <Image Source="facebook.png"/>
-                    <Image Source="twitter.png"/>
-                </FlexLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Label Text="Don't have an account?" TextColor="#666666" FontSize="Medium" FontFamily="Roboto" FontAttributes="Bold"/>
-                    <Label Text="Register Now" TextColor="#ff7c17" TextDecorations="Underline" FontSize="Medium" FontFamily="Roboto" FontAttributes="Bold"/>
+                <StackLayout Margin="20,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry IsPassword="True" Placeholder="Password*" PlaceholderColor="LightGray" FontSize="Medium"/>
+                        <Image Grid.Column="1" TranslationY="-5" Source="invisible.png"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout HorizontalOptions="End" Margin="20,0">
+                    <Label Text="Forgot your Password?" TextColor="LightGray" FontSize="Medium" FontFamily="Roboto"/>
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
+        <StackLayout  Grid.Row="2">
+            <StackLayout Margin="20" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="Login"
+                        FontSize="Medium" 
+                        TextColor="White" 
+                        IsEnabled="{Binding Text,
+                                            Source={x:Reference EmailField},
+                                            Converter={StaticResource IsValidEmailCheck}}" 
+                        FontAttributes="Bold"
+                        BackgroundColor="#ff7c17"
+                        Padding="10,15,10,15"
+                        CornerRadius="30"/>
+                <Label Text="Or Login using social Media" FontAttributes="Bold" FontSize="Medium" TextColor="#666666" FontFamily="Roboto"/>
+            </StackLayout>
+            <FlexLayout JustifyContent="SpaceEvenly" AlignContent="Center">
+                <Image Source="facebook.png"/>
+                <Image Source="twitter.png"/>
+            </FlexLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Don't have an account?" TextColor="#666666" FontSize="Medium" FontFamily="Roboto" FontAttributes="Bold"/>
+                <Label Text="Register Now" TextColor="#ff7c17" TextDecorations="Underline" FontSize="Medium" FontFamily="Roboto" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Registration_page}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
     </Grid>
   
 </ContentPage>

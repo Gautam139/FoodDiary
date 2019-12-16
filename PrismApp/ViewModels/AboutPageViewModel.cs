@@ -11,7 +11,7 @@ namespace PrismApp.ViewModels
     public class AboutPageViewModel : BindableBase, INavigatedAware
     {
         private bool _dataLoading;
-
+        
         public bool DataLoading
         {
             get { return _dataLoading; }
@@ -27,16 +27,22 @@ namespace PrismApp.ViewModels
 
         //mandatory for navigation in prism start from here
         private DelegateCommand _navigationCommand;
+        private DelegateCommand _registration_page;
 
         private readonly INavigationService _navigationService;
 
         public DelegateCommand Back_btn => _navigationCommand ?? (_navigationCommand = new DelegateCommand(ExecuteNavigationCommand));
+        public DelegateCommand Registration_page => _registration_page ?? (_registration_page = new DelegateCommand(Registration_page_command));
+
+        private async void Registration_page_command()
+        {
+            await _navigationService.NavigateAsync("SignUpPage");
+        }
 
         public AboutPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             DataLoading = true;
-
         }
         private async void ExecuteNavigationCommand()
         {
@@ -55,6 +61,5 @@ namespace PrismApp.ViewModels
             Title = parameters.GetValue<string>("title");
             DataLoading = false;
         }
-
     }
 }

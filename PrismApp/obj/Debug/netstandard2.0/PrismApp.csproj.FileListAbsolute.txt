@@ -10,4 +10,3 @@ C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\
 C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.dll
 C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.pdb
-C:\Users\Shubham Gautam\source\repos\PrismApp\PrismApp\obj\Debug\netstandard2.0\PrismApp.csprojAssemblyReference.cache
